@@ -15,75 +15,73 @@ require_once '../../config/db.php';
 
 
   <main class="max-w-7xl mx-auto p-4">
-    
-  <h1 class="text-black">Bienvenido al Dashboard</h1>
+  
+<body class="bg-gray-100">
+    <div class="max-w-7xl mx-auto p-6">
+        <!-- Navigation Tabs -->
+        <div class="bg-white shadow-md rounded-lg p-4 mb-6">
+            <ul class="flex space-x-4 border-b">
+                <li class="pb-2 border-b-2 border-orange-500 text-orange-600">Tareas de hoy</li>
+
+            </ul>
+            <!-- Info Message -->
+            <div class="mt-4 p-4 bg-gray-100 border border-orange-300 rounded-md text-orange-500">
+                <span class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M18 13a6 6 0 11-12 0 6 6 0 0112 0zM9 5a6 6 0 1012 0A6 6 0 009 5z" clip-rule="evenodd" />
+                        <path fill-rule="evenodd" d="M9 9a6 6 0 0112 0 6 6 0 0112 0zM9 17a6 6 0 font-weight" />
+                    </svg>
+                    Información actualizada en tiempo real
+                </span>
+            </div>
+        </div>
+        <!-- Dashboard Indicators -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 ">
+                    <!-- Órdenes de trabajo hoy -->
+                    <div class="p-8 bg-amber-100 rounded-md shadow-gray-500/40 shadow-lg border border-amber-200">
+                        <h3 class="text-gray-600 font-semibold">Órdenes de trabajo de hoy</h3>
+                        <div class="flex items-center mt-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-amber-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2zm14 2H5v14h14V5zm-6 2h4v2h-4zm0 4h4v2h-4zM7 7h4v2H7zm0 4h4v2H7zm0 4h10v2H7z" />
+                            </svg>
+                            <span class="text-2xl font-bold text-gray-600">0</span>
+                        </div>
+                    </div>
+                     <div class="p-8 bg-green-100 rounded-md shadow-gray-500/40 shadow-lg border border-green-200">
+                        <h3 class="text-gray-600 font-semibold">Ventas de hoy</h3>
+                        <div class="flex items-center mt-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2zm14 2H5v14h14V5zm-6 2h4v2h-4zm0 4h4v2h-4zM7 7h4v2H7zm0 4h4v2H7zm0 4h10v2H7z" />
+                            </svg>
+                            <span class="text-2xl font-bold text-gray-600">0</span>
+                        </div>
+                    </div>
+                    <div class="p-8 bg-blue-100 rounded-md shadow-gray-500/40 shadow-lg border border-blue-200">
+                        <h3 class="text-gray-600 font-semibold">Pagos de clientes hoy</h3>
+                        <div class="flex items-center mt-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2zm14 2H5v14h14V5zm-6 2h4v2h-4zm0 4h4v2h-4zM7 7h4v2H7zm0 4h4v2H7zm0 4h10v2H7z" />
+                            </svg>
+                            <span class="text-2xl font-bold text-gray-600">0</span>
+                        </div>
+                    </div>
+                    <div class="p-8 bg-red-100 rounded-md shadow-gray-500/40 shadow-lg border border-red-200">
+                        <h3 class="text-gray-600 font-semibold">Devoluciones de clientes hoy</h3>
+                        <div class="flex items-center mt-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-red-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2zm14 2H5v14h14V5zm-6 2h4v2h-4zm0 4h4v2h-4zM7 7h4v2H7zm0 4h4v2H7zm0 4h10v2H7z" />
+                            </svg>
+                            <span class="text-2xl font-bold text-gray-600">0</span>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</body>
+            
+                        
         
   </main>
   
 
-  <!-- Auto-ocultar notificación a los 5 segundos con suave desvanecimiento -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.getElementById('nuevoSistemaModal');
-      const btnCerrarModal = document.getElementById('btnCerrarModalSistema');
-      const btnVerInfo = document.getElementById('btnVerInfoSedepos');
-      const infoSedepos = document.getElementById('infoSedepos');
-
-      const cerrarModalConDesvanecimiento = () => {
-        if (!modal || modal.classList.contains('hidden')) {
-          return;
-        }
-
-        modal.classList.add('opacity-0');
-        setTimeout(() => {
-          modal.classList.add('hidden');
-          modal.classList.remove('opacity-0');
-        }, 500);
-      };
-
-      if (modal) {
-        modal.classList.remove('hidden');
-
-        // Cierra automaticamente luego de 10 segundos
-        setTimeout(() => {
-          cerrarModalConDesvanecimiento();
-        }, 10000);
-      }
-
-      if (btnCerrarModal && modal) {
-        btnCerrarModal.addEventListener('click', () => {
-          cerrarModalConDesvanecimiento();
-        });
-      }
-
-      if (btnVerInfo && infoSedepos && modal) {
-        btnVerInfo.addEventListener('click', () => {
-          cerrarModalConDesvanecimiento();
-          infoSedepos.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
-      }
-
-      // Cierra el modal al presionar Enter
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' && modal && !modal.classList.contains('hidden')) {
-          cerrarModalConDesvanecimiento();
-        }
-      });
-
-      const notif = document.getElementById('loginNotif');
-      if (!notif) return;
-
-      // Asegura transición suave
-      notif.classList.add('transition-opacity', 'duration-500');
-
-      // Oculta a los 5 segundos
-      const hideAfter = 5000; // ms
-      setTimeout(() => {
-        notif.classList.add('opacity-0');
-        // Tras la transición, oculta del flujo
-        setTimeout(() => notif.classList.add('hidden'), 500);
-      }, hideAfter);
-    });
-  </script>
 </body>
 </html>
