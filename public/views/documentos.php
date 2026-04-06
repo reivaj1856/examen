@@ -64,14 +64,14 @@ $tareas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <td class="px-2 py-2">
                     <div>
-                        <span class="remitente">Encargado:</span>
+                        <span class="remitente">Persona Encargada:</span>
                         <span><?= htmlspecialchars($tarea['referencia'] ?? '') ?></span>
                     </div>
                     
                 </td>
                 <td class="px-2 py-2">
                     <div>
-                        <span class="remitente">plazo:</span>
+                        <span class="remitente">plazo de la tarea:</span>
                         <span><?= htmlspecialchars($tarea['plazo'] ?? '') ?></span>
                     </div>
                     
